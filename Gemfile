@@ -38,6 +38,8 @@ group :test do
   gem 'capybara'
   gem 'guard-rspec'
   gem 'launchy'
+  gem 'shoulda-matchers'
+  gem 'rails-controller-testing'
 end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -46,6 +48,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'spring'
   gem 'rspec-rails'
+  gem 'capybara'
 end
 
 group :development do
@@ -53,6 +56,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
   gem 'spring-commands-rspec'
+  gem 'annotate'
   gem 'guard-rspec'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring-watcher-listen', '~> 2.0.0'
