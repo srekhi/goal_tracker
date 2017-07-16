@@ -1,4 +1,4 @@
-<form class="" action='<%= posts_url %>' method="post">
+<!-- <form class="" action='<%= posts_url %>' method="post">
    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <textarea name="post[body]"></textarea>
   <label for="post_author"></label>
@@ -28,4 +28,12 @@
   <input type="checkbox" name="post[author][]" value="sunny"> Sunny <br />
   <input type="checkbox" name="post[author][]" value="not-sunny"> Not Sunny <br />
   <input type="submit" value="Submit all authors of this post">
-</form>
+</form> -->
+
+<h1>The form </h1>
+<%= form_for(@post) do |f| %> <!-- build out normal form input -->
+  <%= f.label :body %>
+  <%= f.text_area :body%>
+  <%= f.select :author, [['--please select author--', '0'], ['Sunny', 'sunny'], ['Not Sunny', 'not sunny']], {disabled: '0', selected: '0'} %>
+  <%= f.submit 'Create Post' %>
+<% end %>
