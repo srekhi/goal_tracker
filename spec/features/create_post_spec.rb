@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'creating a post' do
   scenario 'with missing author params' do
-    create_post('Sunny rulez!')
+    create_post 'Sunny rulez!'
     click_on 'Create post'
     expect(page).to have_content('Author can\'t be blank')
   end
@@ -16,7 +16,7 @@ feature 'creating a post' do
   scenario 'with valid params' do
     create_post('Sunny rulez!', 'Sunny')
     click_on 'Create post'
-    expect(page).to have_content('Sunny rulez! Sunny')
+    expect(page).to have_content('Sunny rulez!')
   end
 
 end
