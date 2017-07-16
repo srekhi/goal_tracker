@@ -1,0 +1,31 @@
+<form class="" action='<%= posts_url %>' method="post">
+   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <textarea name="post[body]"></textarea>
+  <label for="post_author"></label>
+  <select name="post[author]">
+      <option disabled selected>-- Please select an author --</option>
+      <option value="sunny">Sunny</option>
+      <option value="not sunny">Not Sunny</option>
+  </select>
+  <br>
+
+  <input type="submit" value="Create post" />
+</form>
+
+
+<p> This is just practicing building a radio form for selecting author: </p>
+<form class="" action='<%= posts_url %>' method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="radio" name='post[author]' value="sunny"> Sunny <br />
+  <input type="radio" name='post[author]' value="not-sunny"> Not Sunny <br />
+  <input type="submit" value="Submit Author via Radio Btn">
+</form>
+
+
+<p> This is just practicing building a checkbox form for selecting author: </p>
+<form class="" action='<%= posts_url %>' method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="checkbox" name="post[author][]" value="sunny"> Sunny <br />
+  <input type="checkbox" name="post[author][]" value="not-sunny"> Not Sunny <br />
+  <input type="submit" value="Submit all authors of this post">
+</form>

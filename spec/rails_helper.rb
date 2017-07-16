@@ -62,3 +62,9 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+def create_post(body, author = nil)
+  visit "/posts"
+  fill_in "post[body]", with: body
+  select author, from: 'post[author]' if author
+end
